@@ -7,10 +7,11 @@ RUN yum update -y && \
 
 WORKDIR /usr/local
 
-RUN wget http://www-us.apache.org/dist/tomcat/tomcat-9/v9.0.14/bin/apache-tomcat-9.0.14.tar.gz && \
-    tar -xvf apache-tomcat-9.0.14.tar.gz && \
-        mv apache-tomcat-9.0.14 tomcat && \
-        rm -rf  apache-tomcat-9.0.14.tar.gz
+
+RUN wget https://downloads.apache.org/tomcat/tomcat-9/v9.0.40/src/apache-tomcat-9.0.40-src.tar.gz && \
+    tar -xvf apache-tomcat-9.0.40-src.tar.gz && \
+        mv apache-tomcat-9.0.40-src tomcat && \
+        rm -rf  apache-tomcat-9.0.40-src.tar.gz
 
 RUN echo "export CATALINA_HOME="/usr/local/tomcat"" >> ~/.bashrc && \
     source ~/.bashrc
